@@ -1,0 +1,55 @@
+import { ProductItem } from "@/types/ProductItem";
+
+const data: {products: ProductItem[]} = {
+  products: [
+    {
+      name: 'T-shirt',
+      slug: 't-shirt',
+      category: 'Shirts',
+      image: '/images/shirt1.jpg',
+      price: 70,
+      brand: 'Blank',
+      rating: 4.5,
+      numReviews: 8,
+      countInStock: 20,
+      description: 'A white t-shirt',
+    },
+    {
+      name: 'Sweater',
+      slug: 'sweater',
+      category: 'Sweaters',
+      image: '/images/sweater.jpg',
+      price: 100,
+      brand: 'Blank',
+      rating: 4.7,
+      numReviews: 11,
+      countInStock: 6,
+      description: 'Comfy sweater',
+    },
+    {
+      name: 'Jacket',
+      slug: 'jacket',
+      category: 'Jackets',
+      image: '/images/Jacket.jpg',
+      price: 70,
+      brand: 'Blank',
+      rating: 4.2,
+      numReviews: 4,
+      countInStock: 12,
+      description: 'A warm jacket',
+    },
+    {
+      name: 'T-shirt',
+      slug: 't-shirtred',
+      category: 'Shirts',
+      image: '/images/shirt2.jpg',
+      price: 65,
+      brand: 'Blank',
+      rating: 4.1,
+      numReviews: 14,
+      countInStock: 16,
+      description: 'A red t-shirt',
+    },
+  ],
+};
+export default data;
