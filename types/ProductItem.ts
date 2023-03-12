@@ -9,4 +9,5 @@ rating: number;
 numReviews: number;
 countInStock: number;
 description: string;
+quantity: number
 }

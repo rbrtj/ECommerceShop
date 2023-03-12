@@ -1,12 +1,11 @@
+import { Action, CartStoreType } from '@/types/CartStore';
 import { createContext, useReducer } from 'react';
 
-export const Store = createContext();
-
-const initialState = {
+const initialState: CartStoreType = {
   cart: { cartItems: [] },
 };
 
-function reducer(state, action) {
+function reducer(state: CartStoreType, action: Action): CartStoreType {
   switch (action.type) {
     case 'CART_ADD_ITEM': {
       const newItem = action.payload;
@@ -26,8 +25,14 @@ function reducer(state, action) {
   }
 }
 
-export function StoreProvider({ children }) {
+const defaultDispatch: React.Dispatch<Action> = () => initialState;
+
+export const CartStore = createContext({
+  state: initialState,
+  dispatch: defaultDispatch,
+});
+
+export function StoreProvider(props: React.PropsWithChildren<{}>) {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const value = { state, dispatch };
-  return <Store.Provider value={value}>{children}</Store.Provider>;
+  return <CartStore.Provider value={{ state, dispatch }} {...props} />;
 }
