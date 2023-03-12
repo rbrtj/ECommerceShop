@@ -5,7 +5,9 @@ export type CartStoreType = {
   };
 };
 
-export type Action = { type: 'CART_ADD_ITEM'; payload: ProductItemType };
+export type Action = { type: ActionTypes; payload: ProductItemType };
+
+export type ActionTypes = 'CART_ADD_ITEM' | 'CART_REMOVE_ITEM';
 
 export type DefaultDispatch = {
  defaultDispatch: React.Dispatch<Action> 
